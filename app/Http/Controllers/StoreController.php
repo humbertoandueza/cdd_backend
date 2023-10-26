@@ -25,7 +25,8 @@ class StoreController extends Controller
      */
     public function create()
     {
-
+        $stores = Store::all()->count();
+       return response()->json(['count'=>$stores]);
     }
 
     /**

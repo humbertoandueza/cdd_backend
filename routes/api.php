@@ -25,3 +25,4 @@ Route::post('/store/create', [StoreController::class, 'store'])->name('store-sto
 Route::put('/store/update/{id}', [StoreController::class, 'update'])->name('update-store');
 Route::get('/store/detail/{id}', [StoreController::class, 'show'])->name('detail-store');
 Route::get('/store/delete/{id}', [StoreController::class, 'delete'])->name('delete-store');
+Route::get('/store/count', [StoreController::class, 'create'])->name('count-store');
