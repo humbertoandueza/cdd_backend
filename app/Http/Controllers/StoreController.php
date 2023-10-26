@@ -25,8 +25,13 @@ class StoreController extends Controller
      */
     public function create()
     {
-        $stores = Store::all()->count();
-       return response()->json(['count'=>$stores]);
+        $stores = Store::all();
+        $numeros = [];
+        foreach ($stores as $registro) {
+            $cupones = explode(',', $registro->coupons);
+            $numeros = array_merge($numeros, $cupones);
+        }
+        return response()->json(['count'=> count($numeros)]);
     }
 
     /**
