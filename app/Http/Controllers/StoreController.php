@@ -56,7 +56,7 @@ class StoreController extends Controller
      */
     public function show(Store $store)
     {
-        //
+
     }
 
     /**
@@ -65,9 +65,10 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function edit(Store $store)
+    public function edit($id)
     {
-        //
+        $store = Store::find($id);
+        return response()->json($store);
     }
 
     /**
