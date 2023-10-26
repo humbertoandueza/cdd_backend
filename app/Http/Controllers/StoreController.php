@@ -102,6 +102,6 @@ class StoreController extends Controller
         $store = Store::find($id);
         $store->delete();
 
-        return redirect()->json(['message'=>'Eliminado con éxito']);
+        return response()->json(['message'=>'Eliminado con éxito']);
     }
 }
