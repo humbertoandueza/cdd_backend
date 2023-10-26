@@ -96,8 +96,11 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Store $store)
+    public function destroy($id)
     {
-        //
+        $store = Store::find($id);
+        $store->delete();
+
+        return redirect()->json(['message'=>'Eliminado con éxito']);
     }
 }
